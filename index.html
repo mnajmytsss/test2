@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Preference</title>
+    <style>
+      body.blue {
+        background-color: blue;
+        color: white;
+      }
+      body.dark {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Choose Theme</h1>
+    <button onclick="setTheme('blue')">Blue Mode</button>
+    <button onclick="setTheme('dark')">Dark Mode</button>
+    <button onclick="clearTheme()">Clear Theme</button>
+
+    <iframe
+      src="https://docs.google.com/document/d/1utQaaaV9Pc3WP4-WC6RqOSlm6tkz1-Xp79C2DNA9JfE/edit"
+      width="600"
+      height="400"
+      title="Example iFrame"
+    ></iframe>
+
+    <picture>
+      <source srcset="image-large.png" media="(min-width: 800px)" />
+      <source srcset="image-medium.png" media="(min-width: 500px)" />
+      <img src="image-small.png" alt="Contoh Gambar Responsif" />
+    </picture>
+
+    <script>
+      function setTheme(theme) {
+        document.body.className = theme;
+        sessionStorage.setItem("jasdjbgasdjhfasdjfknj", theme);
+      }
+
+      function loadTheme() {
+        // const theme = sessionStorage.getItem("theme");
+        if (theme) {
+          document.body.className = theme;
+        }
+      }
+
+      function clearTheme() {
+        document.body.className = "";
+        sessionStorage.removeItem("theme");
+      }
+
+      // Load theme on page load
+      window.onload = loadTheme;
+    </script>
+  </body>
+</html>
